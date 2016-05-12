@@ -1,22 +1,30 @@
 <!DOCTYPE html>
-<html  ng-app="twitterApp">
-    <head>
-        <title>{{appName}}</title>
-        <script src="vendor/angular.min.js"></script>
-    </head>
-    <body>
-        <div ng-include="'app/login/login.tpl.html'"></div>
-        
-        <!--login module-->
-        <script src="app/login/login.js"></script>
-        <script src="app/login/loginCtrl.js"></script>
-        
-        <!--end of login module-->
-        
-        <!--register--module-->
-        <script src="app/register/register.js"></script>
-        <script src="app/register/registerCtrl.js"></script>
-        <!--register module complete-->
-        <script src="app/app.js"></script>
-    </body>
+<html ng-app="twitterApp">
+
+<head>
+    <title>{{appName}}</title>
+    <link rel="stylesheet" href="content/css/bootstrap.css">
+    <link rel="stylesheet" href="content/css/bootstrap-theme.css">
+    <script src="vendor/jquery-2.2.0.js"></script>
+    <script src="vendor/bootstrap.js"></script>
+    <script src="vendor/angular.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div ng-include="'app/register/register.tpl.html'"></div>
+    </div>
+    <!--login module-->
+    <script src="app/login/login.js"></script>
+    <script src="app/login/loginCtrl.js"></script>
+
+    <!--end of login module-->
+
+    <!--register--module-->
+    <script src="app/register/register.js"></script>
+    <script src="app/register/registerCtrl.js"></script>
+    <!--register module complete-->
+    <script src="app/app.js"></script>
+</body>
+
 </html>
