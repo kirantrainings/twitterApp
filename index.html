@@ -11,13 +11,13 @@
 </head>
 
 <body>
-    <div class="container">
-        <div ng-include="'app/register/register.tpl.html'"></div>
+    <div class="container" ng-controller='mainCtrl'>
+        <div ng-include="navBarUrl"></div>
+        <div ng-include="contentUrl"></div>
     </div>
     <!--login module-->
     <script src="app/login/login.js"></script>
     <script src="app/login/loginCtrl.js"></script>
-
     <!--end of login module-->
 
     <!--register--module-->
@@ -25,6 +25,8 @@
     <script src="app/register/registerCtrl.js"></script>
     <!--register module complete-->
     <script src="app/app.js"></script>
+    <script src="app/common/mainCtrl.js"></script>
+    <script src="app/users/usersCtrl.js"></script>
 </body>
 
 </html>

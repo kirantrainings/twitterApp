@@ -1,0 +1,18 @@
+<div ng-controller="usersCtrl">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <td></td>
+                <td>User Name</td>
+                <td>Email</td>
+                <td>Phone</td>
+            </tr>
+        </thead>
+        <tr ng-repeat="item in users">
+            <td>{{$index+1}}</td>
+            <td>{{item.username}}</td>
+            <td>{{item.email}}</td>
+            <td>{{item.phoneNumber}}</td>
+        </tr>
+    </table>
+</div>

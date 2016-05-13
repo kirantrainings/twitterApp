@@ -1,13 +1,13 @@
-function loginCtrl($scope){
-    $scope.login={
-        userName:"",
-        password:""
+function loginCtrl($scope) {
+    $scope.login = {
+        username: "",
+        password: ""
     };
-    
-    $scope.loginUser=function(){
+
+    $scope.loginUser = function () {
         console.log($scope.login);
     }
 }
 
 angular.module("twitterApp.login")
-     .controller('loginCtrl',loginCtrl);
+    .controller('loginCtrl', loginCtrl);
