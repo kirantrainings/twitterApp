@@ -1,4 +1,4 @@
-function mainCtrl($scope, $http) {
+function mainCtrl($scope, tabSvc) {
     $scope.navBarUrl = 'app/common/navBar.tpl.html';
 
 
@@ -7,16 +7,14 @@ function mainCtrl($scope, $http) {
     };
 
     function init() {
-        $http.get('app/data/tabs.json')
-            .success(function (response) {
-                $scope.tabs = response.tabs;
-            })
-            .error(function (errorReponse) {
-                console.log(errorReponse)
-            });
+        tabSvc.getTabs().then(function (response) {
+            $scope.tabs = response.tabs;
+        }).catch(function (errorResponse) {
+            $scope.error = "Error Occurred";
+        });
     }
     init();
 
 }
 angular.module('twitterApp')
-    .controller('mainCtrl', ['$scope', '$http', mainCtrl]);
+    .controller('mainCtrl', ['$scope', 'tabSvc', mainCtrl]);

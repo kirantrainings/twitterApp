@@ -1,6 +1,13 @@
 function usersCtrl($scope, userSvc) {
+    userSvc.getUsersByPromise()
+        .then(function (response) {
+            $scope.users = response.profiles;
+        }).catch(function (response) {
+
+        });
+
     //Recommeneded
-    userSvc.getUsers()
+    /*userSvc.getUsers()
         .then(function (response) {
             if (response.statusText == "OK") {
                 console.log(response);
@@ -11,7 +18,7 @@ function usersCtrl($scope, userSvc) {
         }).catch(function (errorResponse) {
             $scope.error = "Error Occurred";
         });
-
+*/
     /*$http.get('app/data/profile.json')
         .success(function (response) {
             $scope.users = response.profiles;

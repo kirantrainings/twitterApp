@@ -1,29 +1,29 @@
-function userSvc() {
+function userSvc($http, $q) {
     this.getUsers = function () {
-        var users = {
-            "profiles": [
-                {
-                    "username": "kiran123",
-                    "email": "kiran@gmail.com",
-                    "phoneNumber": "9959688870"
-    }, {
-                    "username": "ravi1234",
-                    "email": "ravi@gmail.com",
-                    "phoneNumber": "6474648909"
-    }, {
-                    "username": "Reene1234",
-                    "email": "Reene@gmail.com",
-                    "phoneNumber": "938493839"
-    }, {
-                    "username": "teja222",
-                    "email": "teja@gmail.com",
-                    "phoneNumber": "983837399"
-    }
-    ]
-        };
-        return users;
-    }
+        return $http.get('app/data/profile.json');
+    };
+
+    var users;
+    this.getUsersByPromise = function () {
+        //creating the deferred Object
+        var dfd = $q.defer();
+        if (users) {
+            dfd.resolve(users);
+        } else {
+            $http.get('app/data/profile.json')
+                .success(function (response) {
+                    users = response;
+                    dfd.resolve(users);
+                })
+                .error(function (response) {
+                    dfd.reject(response)
+                });
+        }
+        return dfd.promise;
+    };
 }
 
 angular.module('twitterApp')
-    .service('userSvc', [userSvc])
+    .service('userSvc', ['$http', '$q',
+        userSvc])
+    //step 1 injec the $q
