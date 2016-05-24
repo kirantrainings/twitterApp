@@ -4,12 +4,15 @@ function mainCtrl($scope, tabSvc) {
 
     $scope.loadContent = function (tab) {
         $scope.contentUrl = tab.templateUrl;
+        $scope.contentCtrl =tab.controller;
     };
 
     function init() {
-        tabSvc.getTabs().then(function (response) {
+        tabSvc.getTabs()
+            .then(function (response) {
             $scope.tabs = response.tabs;
-        }).catch(function (errorResponse) {
+        })
+            .catch(function (errorResponse) {
             $scope.error = "Error Occurred";
         });
     }

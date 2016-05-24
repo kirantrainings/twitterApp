@@ -25,6 +25,31 @@ function usersCtrl($scope, userSvc) {
         }).error(function (errorResponse) {
             console.log(errorResponse);
         });*/
+    $scope.countries = [
+        {
+            code: "IN",
+            name: "India",
+            phonecode: "+91"
+        },
+        {
+            code: "US",
+            name: "United State",
+            phonecode: "+1"
+        },
+        {
+            code: "CA",
+            name: "Canada",
+            phonecode: "+2"
+                       }
+    ];
+    $scope.sortBy = function (type) {
+        if (type == 'username') {
+            $scope.sortFilter = $scope.sortFilter == 'username' ? '-username' : 'username'
+        }
+        if (type == 'email') {
+            $scope.sortFilter = $scope.sortFilter == 'email' ? '-email' : 'email'
+        }
+    }
 }
 
 angular.module('twitterApp')

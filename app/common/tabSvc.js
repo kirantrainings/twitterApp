@@ -13,8 +13,6 @@ function tabSvc($http, $q) {
 
         return dfd.promise;
     };
-
-
 }
 
 
