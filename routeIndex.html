@@ -13,8 +13,8 @@
 
 <body>
     <div class="container" ng-controller='mainCtrl'>
-        <div ng-include="navBarUrl"></div>
-        <div ng-include="contentUrl"></div>
+        <div ng-include="navBarRouterUrl"></div>
+        <div ui-view></div>
     </div>
     <!--login module-->
     <script src="app/login/login.js"></script>
@@ -37,8 +37,6 @@
     <script src="app/common/mainCtrl.js"></script>
     <script src="app/users/usersCtrl.js"></script>
     <script src="app/common/phoneformat.js"></script>
-
-
 </body>
 
 </html>
