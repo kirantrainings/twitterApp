@@ -25,5 +25,5 @@ angular.module('twitterApp')
             $stateProvider.state('home', home);
             $stateProvider.state('login', login);
             $stateProvider.state('register', register);
-            $stateProvider.$state('tweets', tweets);
+            $stateProvider.state('tweets', tweets);
     }]);
