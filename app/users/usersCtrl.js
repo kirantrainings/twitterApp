@@ -49,6 +49,9 @@ function usersCtrl($scope, userSvc) {
         if (type == 'email') {
             $scope.sortFilter = $scope.sortFilter == 'email' ? '-email' : 'email'
         }
+    };
+    $scope.loadDetails = function (item) {
+        $scope.details = item;
     }
 }
 

@@ -22,8 +22,21 @@ angular.module('twitterApp')
             var register = {
                 templateUrl: "app/register/register.tpl.html"
             };
+            var users = {
+                url: "/users",
+                controller: "usersCtrl",
+                views: {
+                    '': {
+                        templateUrl: 'app/users/users.tpl.html'
+                    },
+                    "details@users": {
+                        templateUrl: "app/users/users.details.tpl.html"
+                    }
+                }
+            };
             $stateProvider.state('home', home);
             $stateProvider.state('login', login);
             $stateProvider.state('register', register);
             $stateProvider.state('tweets', tweets);
+            $stateProvider.state('users', users);
     }]);
