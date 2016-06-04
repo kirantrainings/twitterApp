@@ -2,7 +2,7 @@
     <div class="form-group">
         <label for="inputEmail" class="control-label col-xs-2">Email</label>
         <div class="col-xs-4">
-            <input type="email" class="form-control" id="inputEmail" placeholder="Email" ng-model='login.username'>
+            <input type="text" class="form-control" id="inputEmail" placeholder="Email" ng-model='login.username'>
         </div>
     </div>
     <div class="form-group">
@@ -23,5 +23,6 @@
         <div class="col-xs-offset-2 col-xs-4">
             <button type="submit" class="btn btn-primary" ng-click="loginUser()">Login</button>
         </div>
+        <div ng-show='showError'>Invalid Credentials</div>
     </div>
 </form>

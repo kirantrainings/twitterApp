@@ -1,4 +1,5 @@
-function tweetCtrl($scope, tweetSvc) {
+function tweetCtrl($scope, tweetSvc, $state) {
+    console.log($state.params);
     tweetSvc.getTweets()
         .then(function (response) {
             $scope.tweets = response.tweets;
@@ -15,4 +16,4 @@ function tweetCtrl($scope, tweetSvc) {
 }
 
 angular.module('twitterApp.tweet')
-    .controller('tweetCtrl', ['$scope', 'tweetSvc', tweetCtrl])
+    .controller('tweetCtrl', ['$scope', 'tweetSvc', '$state', tweetCtrl])

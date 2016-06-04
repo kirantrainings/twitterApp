@@ -1,4 +1,4 @@
-function loginCtrl($scope, $http) {
+function loginCtrl($scope, $http, $state) {
     $scope.login = {
         username: "",
         password: ""
@@ -13,7 +13,19 @@ function loginCtrl($scope, $http) {
         // finally
         $http.get('app/data/logins.json')
             .success(function (response) {
-                console.log(response);
+                var isSuccess = false;
+                angular.forEach(response.users, function (item) {
+                    if (item.username == $scope.login.username && item.password == $scope.login.password) {
+                        isSuccess = true;
+                    }
+                });
+                if (isSuccess) {
+                    $state.go('tweets', {
+                        userDetails: $scope.login.username
+                    });
+                } else {
+                    $scope.showError = true;
+                }
 
             }).error(function (response) {
                 console.log(response);
@@ -23,4 +35,4 @@ function loginCtrl($scope, $http) {
 }
 
 angular.module("twitterApp.login")
-    .controller('loginCtrl', loginCtrl);
+    .controller('loginCtrl', ['$scope', '$http', '$state', loginCtrl]);

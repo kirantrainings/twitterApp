@@ -14,11 +14,15 @@ angular.module('twitterApp')
                 templateUrl: "app/home/home.tpl.html"
             };
             var login = {
+                url: "/login",
                 templateUrl: "app/login/login.tpl.html"
             };
-            var tweets = {
-                templateUrl: "app/tweets/tweet.tpl.html"
-            };
+             
+ var tweets = {
+         url: "/tweets",                                        templateUrl:"app/tweets/tweet.tpl.html",
+         params: { userDetails: ""}
+         };
+             
             var register = {
                 templateUrl: "app/register/register.tpl.html"
             };

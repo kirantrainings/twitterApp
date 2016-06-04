@@ -1,4 +1,4 @@
-var registerCtrlFn = function ($scope, userSvc) {
+var registerCtrlFn = function ($scope, userSvc, $state) {
     //create objects and work with the objects
     $scope.register = {
         firstName: "",
@@ -44,13 +44,18 @@ var registerCtrlFn = function ($scope, userSvc) {
 
     $scope.registerUser = function () {
         $scope.register.address.country = $scope.selectedCountry.code;
+        $state.go("tweets", {
+            userDetails: $scope.register.lastName
+        });
     };
 
     var data = userSvc.getUsers();
     console.log(data);
 };
 angular.module('twitterApp.register')
-    .controller('registerCtrl', ['$scope', 'userSvc', registerCtrlFn]);
+    .controller('registerCtrl', ['$scope',
+                                 'userSvc',
+                                 "$state", registerCtrlFn]);
 
 //best practices involved
 //
