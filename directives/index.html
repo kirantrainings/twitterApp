@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html ng-app="components">
+
+<head>
+    <title>Components</title>
+    <link rel="stylesheet" href="content/css/bootstrap.css">
+    <link rel="stylesheet" href="content/css/bootstrap-theme.css">
+
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+
+    <script src="vendor/jquery-2.2.0.js"></script>
+
+    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jcarousel/0.3.4/jquery.jcarousel.js"></script>
+
+    <script src="vendor/bootstrap.js"></script>
+    <script src="vendor/angular.min.js"></script>
+    <script src="vendor/angular-ui-router.js"></script>
+</head>
+
+<body>
+    <!--  <div class="container">
+        <input type="text" ng-model="welcome">
+       
+        <custom-name></custom-name>
+       
+        <div custom-name></div>
+      
+        <div class="custom-name"></div>
+       
+    </div>-->
+    <!--Day2 Code-->
+    <div class="container">
+        <div custom-navbar></div>
+        <div class="col-xs-3">
+            <input type="text" class="form-control" numbers-only length="10">
+        </div>
+        <div class="col-xs-3">
+            <input type="text" class="form-control" numbers-only length="5">
+        </div>
+        <div class="col-xs-3">
+            <input type="text" class="form-control" date-picker placeholder="Date of Birth" maxdate="0">
+        </div>
+        <div class="col-xs-3">
+            <input type="text" class="form-control" date-picker placeholder="Advance Booking" mindate="0">
+        </div>
+        <div carosel></div>
+    </div>
+
+    <script src="components/components.js"></script>
+    <script src="components/customName.js"></script>
+    <script src="components/customBrand.js"></script>
+    <script src="components/customNavbar.js"></script>
+    <script src="components/numbersOnly.js"></script>
+    <script src="components/datePicker.js"></script>
+    <script src="components/customCarousel.js"></script>
+</body>
+
+</html>
